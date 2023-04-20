@@ -27,10 +27,15 @@ def get_text():
                             label_visibility='hidden')
     return input_text
 
-API_O = st.sidebar.text_input(":blue[Enter Your OPENAI API-KEY :]", 
-                    placeholder="Paste your OpenAI API key here (sk-...)",
-                    type="password") # Session state storage would be ideal
-MODEL = st.selectbox(label='Model', options=['gpt-3.5-turbo','text-davinci-003','text-davinci-002','code-davinci-002'])   
+# API_O = st.sidebar.text_input(":blue[Enter Your OPENAI API-KEY :]", 
+#                     placeholder="Paste your OpenAI API key here (sk-...)",
+#                     type="password") # Session state storage would be ideal
+# MODEL = st.selectbox(label='Model', options=['gpt-3.5-turbo','text-davinci-003','text-davinci-002','code-davinci-002'])   
+
+# load api key from secrets
+API_O = st.secrets["openai_api_key"]
+MODEL = 'gpt-3.5-turbo'
+
 if API_O:
     # Create an OpenAI instance
     llm = OpenAI(temperature=0,
