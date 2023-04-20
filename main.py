@@ -115,28 +115,28 @@ with st.sidebar.expander(" 🛠️ Settings ", expanded=False):
         
         
         
-    # Allow to download as well
-    download_str = []
-    # Display the conversation history using an expander, and allow the user to download it
-    with st.expander("Conversation", expanded=True):
-        for i in range(len(st.session_state['generated'])-1, -1, -1):
-            st.info(st.session_state["past"][i],icon="🧐")
-            st.success(st.session_state["generated"][i], icon="🤖")
-            download_str.append(st.session_state["past"][i])
-            download_str.append(st.session_state["generated"][i])
+#     # Allow to download as well
+#     download_str = []
+#     # Display the conversation history using an expander, and allow the user to download it
+#     with st.expander("Conversation", expanded=True):
+#         for i in range(len(st.session_state['generated'])-1, -1, -1):
+#             st.info(st.session_state["past"][i],icon="🧐")
+#             st.success(st.session_state["generated"][i], icon="🤖")
+#             download_str.append(st.session_state["past"][i])
+#             download_str.append(st.session_state["generated"][i])
 
-        # Can throw error - requires fix
-        download_str = '\n'.join(download_str)
-        if download_str:
-            st.download_button('Download',download_str)
+#         # Can throw error - requires fix
+#         download_str = '\n'.join(download_str)
+#         if download_str:
+#             st.download_button('Download',download_str)
             
             
-    # Display stored conversation sessions in the sidebar
-    for i, sublist in enumerate(st.session_state.stored_session):
-            with st.sidebar.expander(label= f"Conversation-Session:{i}"):
-                st.write(sublist)
+#     # Display stored conversation sessions in the sidebar
+#     for i, sublist in enumerate(st.session_state.stored_session):
+#             with st.sidebar.expander(label= f"Conversation-Session:{i}"):
+#                 st.write(sublist)
 
-    # Allow the user to clear all stored conversation sessions
-    if st.session_state.stored_session:   
-        if st.sidebar.checkbox("Clear-all"):
-            del st.session_state.stored_session
+#     # Allow the user to clear all stored conversation sessions
+#     if st.session_state.stored_session:   
+#         if st.sidebar.checkbox("Clear-all"):
+#             del st.session_state.stored_session
