@@ -4,3 +4,4 @@ openai
 plotly
 numpy
 streamlit_chat
+langchain
