@@ -25,7 +25,7 @@ def get_text():
     input_text = st.text_input("You: ", st.session_state["input"], key="input",
                             placeholder="Your AI assistant here! Ask me anything ...", 
                             label_visibility='hidden')
-    return input_tex
+    return input_text
 
 def new_chat():
     """
