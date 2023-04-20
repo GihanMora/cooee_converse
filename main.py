@@ -48,7 +48,7 @@ if API_O:
             llm=llm, 
             prompt=ENTITY_MEMORY_CONVERSATION_TEMPLATE,
             memory=st.session_state.entity_memory)  
- else:
+else:
         st.error("No API found")
         
 
