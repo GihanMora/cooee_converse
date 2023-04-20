@@ -56,3 +56,9 @@ if user_input:
     output = Conversation.run(input=user_input)  
     st.session_state.past.append(user_input)
     st.session_state.generated.append(output)
+
+    
+with st.expander("Conversation"):
+    for i in range(len(st.session_state['generated'])-1, -1, -1):
+        st.info(st.session_state["past"][i],icon="🧐")
+        st.success(st.session_state["generated"][i], icon="🤖")
