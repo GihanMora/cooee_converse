@@ -105,7 +105,7 @@ with st.sidebar.expander(" 🛠️ Settings ", expanded=False):
         
         
         
-     st.sidebar.button("New Chat", on_click = new_chat, type='primary')
+    st.sidebar.button("New Chat", on_click = new_chat, type='primary')
     
     user_input = get_text()
     if user_input:
